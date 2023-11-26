@@ -49,19 +49,15 @@ function setGradient(start, end) {
 }
 
 gradientStart.addEventListener("change", () => {
-  getGradientProperty();
-  const start = getGradientProperty.gradientStartColor;
-  const end = getGradientProperty.gradientEndColor;
-  setGradient(start, end);
-  draw(start, end);
+  const { gradientStartColor, gradientEndColor } = getGradientProperty();
+  setGradient(gradientStartColor, gradientEndColor);
+  draw(gradientStartColor, gradientEndColor);
 });
 
 gradientEnd.addEventListener("change", () => {
-  getGradientProperty();
-  const start = getGradientProperty.gradientStartColor;
-  const end = getGradientProperty.gradientEndColor;
-  setGradient(start, end);
-  draw(start, end);
+  const { gradientStartColor, gradientEndColor } = getGradientProperty();
+  setGradient(gradientStartColor, gradientEndColor);
+  draw(gradientStartColor, gradientEndColor);
 });
 
 
