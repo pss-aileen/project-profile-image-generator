@@ -5,15 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <canvas id="tutorial" width="240" height="240">
+    
   </canvas>
 
-  
+  <br>
+
+  😍
+
+  <input type="color" id="background-color" value="#ffc0cb"><br>
 
   <button id="btn">ダウンロード</button>
   
+  <script>
+    twemoji.parse(document.body);
+  </script>
   <script src="/js/main.js"></script>
 </body>
 </html>
