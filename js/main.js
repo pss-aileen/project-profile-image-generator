@@ -1,4 +1,7 @@
+
+
 function draw() {
+
 
   let canvas = document.getElementById("tutorial");
   
@@ -12,12 +15,16 @@ function draw() {
     const x = canvas.width / 2;
     const y = canvas.height / 2;
 
-    context.fillStyle = "pink";
+    context.fillStyle = "skyblue";
     context.fillRect(0, 0, width, height);
 
-    context.font = "normal 160px/1 serif";
+    context.font = "normal 140px/1 serif";
     context.textAlign = "center";
     context.textBaseline = "middle";
+    context.shadowColor = "rgba(0, 0, 0, 0.2)"; // 影の色
+    context.shadowBlur = 16; // 影のぼかしの強さ
+    context.shadowOffsetX = 0; // 影のオフセット（水平方向）
+    context.shadowOffsetY = 4; // 影のオフセット（垂直方向）
     
     const emojiHeight = context.measureText("😍").actualBoundingBoxAscent;
     context.strokeText("😍", x, y);
