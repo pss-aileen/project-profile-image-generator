@@ -12,10 +12,33 @@
     
   </canvas>
 
+  <div id="test-content">
+
+  </div>
+
   <br>
 
-  <input type="color" id="background-monochrome" value="#ffc0cb"><br>
+  <select id="color-type">
+    <option value="monochrome">単色</option>
+    <option value="gradient">グラデーション</option>
+  </select>
 
+  <br>
+
+  <label>
+    <span>単色</span><br>
+    <input type="color" id="background-monochrome" value="#ffc0cb">
+  </label>
+
+  <br>
+
+  <label>
+    <span>グラデーション</span><br>
+    <input type="color" id="background-gradient-start" value="#ffffff">
+    <input type="color" id="background-gradient-end" value="#000000">
+  </label>
+
+  <br>
   <button id="btn">ダウンロード</button>
   
   <script>
