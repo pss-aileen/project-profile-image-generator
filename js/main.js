@@ -16,8 +16,53 @@ function getBackgroundColor() {
 getBackgroundColor();
 
 
+const select = document.getElementById("color-type");
 
-function draw() {
+select.addEventListener("change", () => {
+  const target = document.getElementById("color-type");
+  console.log(target.value);
+});
+
+
+const gradientStart = document.getElementById("background-gradient-start");
+const gradientEnd = document.getElementById("background-gradient-end");
+
+console.log(gradientStart.value);
+console.log(gradientEnd.value);
+
+getGradientProperty();
+setGradient();
+
+function getGradientProperty() {
+  const gradientStart = document.getElementById("background-gradient-start");
+  const gradientEnd = document.getElementById("background-gradient-end");
+  
+  const gradientStartColor = gradientStart.value;
+  const gradientEndColor = gradientEnd.value;
+  
+  return { gradientStartColor, gradientEndColor };
+}
+
+function setGradient(start, end) {
+  const testArea = document.getElementById("test-content");
+  testArea.style.backgroundImage = `linear-gradient(0deg, ${gradientEnd.value}, ${gradientStart.value})`;
+}
+
+gradientStart.addEventListener("change", () => {
+  const { gradientStartColor, gradientEndColor } = getGradientProperty();
+  setGradient(gradientStartColor, gradientEndColor);
+  draw(gradientStartColor, gradientEndColor);
+});
+
+gradientEnd.addEventListener("change", () => {
+  const { gradientStartColor, gradientEndColor } = getGradientProperty();
+  setGradient(gradientStartColor, gradientEndColor);
+  draw(gradientStartColor, gradientEndColor);
+});
+
+
+
+function draw(gradientStart, gradientEnd) {
 
   let canvas = document.getElementById("tutorial");
   
@@ -31,7 +76,13 @@ function draw() {
     const x = canvas.width / 2;
     const y = canvas.height / 2;
 
-    context.fillStyle = color;
+    const gradient = context.createLinearGradient(0, 0, width , height);
+
+    gradient.addColorStop(0, `${gradientStart}`);
+    gradient.addColorStop(1, `${gradientEnd}`);
+
+    // context.fillStyle = color;
+    context.fillStyle = gradient;
     context.fillRect(0, 0, width, height);
 
     context.font = "normal 140px/1 serif";
@@ -49,7 +100,7 @@ function draw() {
   }
 }
 
-draw();
+draw("red", "yellow");
 
 
 function downloadCanvas() {
