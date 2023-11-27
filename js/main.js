@@ -20,8 +20,8 @@ function drawBase() {
 
   const width = canvas.width;
   const height = canvas.height;
-  context.fillStyle = "green";
-  context.fillRect(10, 10, 150, 100);
+  context.fillStyle = "pink";
+  context.fillRect(0, 0, width, height);
 
   return { canvas, context, width, height };
 }
@@ -31,7 +31,7 @@ drawIcon();
 function drawIcon() {
   const { canvas, context, width, height } = drawBase();
 
-  const imagePath = '../images/icon.png';
+  const imagePath = 'images/icon.png';
   const image = new Image();
   image.src = imagePath;
   image.onload = function() {
@@ -39,6 +39,28 @@ function drawIcon() {
   };
 }
 
+drawGradient();
+
+function drawGradient() {
+  const { canvas, context, width, height } = drawBase();
+
+  let startColor = document.getElementById("background-gradient-start");
+  let endColor = document.getElementById("background-gradient-end");
+
+  startColor = startColor.value;
+  endColor = endColor.value;
+
+  console.log(startColor);
+  console.log(endColor);
+
+  const gradient = context.createLinearGradient(0, 0, width , height);
+
+  gradient.addColorStop(0, startColor);
+  gradient.addColorStop(1, endColor);
+
+  context.fillStyle = gradient;
+  context.fillRect(0, 0, width, height);
+}
 
 
 
