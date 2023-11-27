@@ -15,47 +15,48 @@
     <header class="header">
       <h1 class="header__title">PROFILE GENERATOR</h1>
     </header>
+
+    <div class="content-wrapper">
+      <div class="content-wapper__main">
+        <main class="canvas">
+          <canvas id="tutorial" width="240" height="240" class="canvas__body">
+          </canvas>
+        </main>
     
-    <main class="canvas">
-      <canvas id="tutorial" width="240" height="240" class="canvas__body">
-      </canvas>
-    </main>
+        <section class="download">
+          <button id="btn" class="btn-download">ダウンロード</button>
+        </section>
+      </div>
 
-    <section class="download">
-      <button id="btn" class="btn-download">ダウンロード</button>
-    </section>
+      <div class="content-wrapper__setting">
+        <section class="forms-wrapper">
+          <form class="forms">
+            <label class="forms__item">
+              <span>カラーモード</span>
+              <select id="color-type">
+                <option value="monochrome">単色</option>
+                <option value="gradient">グラデーション</option>
+              </select>
+            </label>
+            
+            <div class="forms__color-wrapper">
+              <div class="forms__item">
+                <span>単色</span><br>
+                <input type="color" id="background-monochrome" value="#ffc0cb" class="forms__input-type-color">
+              </div>
+              
+              <div class="forms__item">
+                <span>グラデーション</span><br>
+                <input type="color" id="background-gradient-start" value="#ffffff" class="forms__input-type-color">
+                <input type="color" id="background-gradient-end" value="#000000" class="forms__input-type-color">
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+      
+    </div><!--content-wrapper-->
     
-    <section class="forms-wrapper">
-      <form class="forms">
-        <label class="forms__item">
-          <span>カラーモード</span>
-          <select id="color-type">
-            <option value="monochrome">単色</option>
-            <option value="gradient">グラデーション</option>
-          </select>
-        </label>
-        
-        <div class="forms__color-wrapper">
-          <div class="forms__item">
-            <span>単色</span><br>
-            <input type="color" id="background-monochrome" value="#ffc0cb" class="forms__input-type-color">
-          </div>
-          
-          <div class="forms__item">
-            <span>グラデーション</span><br>
-            <input type="color" id="background-gradient-start" value="#ffffff" class="forms__input-type-color">
-            <input type="color" id="background-gradient-end" value="#000000" class="forms__input-type-color">
-          </div>
-        </div>
-
-        <ul>
-          <li>プレビュー：四角、丸</li>
-          <li>画像アップロード（背景透過がのぞましい）</li>
-        </ul>
-
-        
-      </form>
-    </section>
     
     <div id="test-content">
       
