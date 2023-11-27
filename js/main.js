@@ -1,5 +1,4 @@
 let color;
-const emoji = "🐶";
 
 function getBackgroundColor() {
   const input = document.getElementById("background-monochrome");
@@ -81,20 +80,22 @@ function draw(gradientStart, gradientEnd) {
     gradient.addColorStop(0, `${gradientStart}`);
     gradient.addColorStop(1, `${gradientEnd}`);
 
+
+    // 画像のパスを指定
+    const imagePath = '../images/icon.png';
+
+    // 画像を読み込んで描画
+    const image = new Image();
+    image.onload = function() {
+      // Canvas上に画像を描画
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    };
+    image.src = imagePath;
+
+
     // context.fillStyle = color;
     context.fillStyle = gradient;
     context.fillRect(0, 0, width, height);
-
-    context.font = "normal 140px/1 serif";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    // context.shadowColor = "rgba(0, 0, 0, 0.2)"; // 影の色
-    context.shadowBlur = 16; // 影のぼかしの強さ
-    context.shadowOffsetX = 0; // 影のオフセット（水平方向）
-    context.shadowOffsetY = 4; // 影のオフセット（垂直方向）
-    
-    const emojiHeight = context.measureText(emoji).actualBoundingBoxAscent;
-    context.strokeText(emoji, x, y);
   } else {
     console.log("no context");
   }
