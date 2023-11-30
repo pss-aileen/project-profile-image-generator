@@ -7,7 +7,7 @@
 
   // イベントトリガー
   document.getElementById("color-type").addEventListener("change", handleColorTypeChange);
-  document.getElementById("background-monochrome").addEventListener("input", handleMonoInput);
+  document.getElementById("background-single").addEventListener("input", handleSingleInput);
   document.getElementById("background-gradient-start").addEventListener("input", handleGradientInput);
   document.getElementById("background-gradient-end").addEventListener("input", handleGradientInput);
   document.getElementById("btn").addEventListener("click", downloadCanvas);
@@ -18,8 +18,8 @@
     setMode(mode);
   }
 
-  function handleMonoInput() {
-    drawMono();
+  function handleSingleInput() {
+    drawSingle();
     drawIcon();
   }
 
@@ -35,18 +35,18 @@
 
   function setMode(mode) {
     getCanvasContext();
-    mode === "monochrome" ? drawMono() : drawGradient();
-    mode === "monochrome" ? activeMonoTab() : activeGradientTab();
+    mode === "single" ? drawSingle() : drawGradient();
+    mode === "single" ? activeSingleTab() : activeGradientTab();
     drawIcon();
   }
 
-  function activeMonoTab() {
+  function activeSingleTab() {
     document.getElementById("tab-gradient").classList.remove("is-active");
-    document.getElementById("tab-monochrome").classList.add("is-active");
+    document.getElementById("tab-single").classList.add("is-active");
   }
 
   function activeGradientTab() {
-    document.getElementById("tab-monochrome").classList.remove("is-active");
+    document.getElementById("tab-single").classList.remove("is-active");
     document.getElementById("tab-gradient").classList.add("is-active");
   }
 
@@ -77,9 +77,9 @@
     context.fillRect(0, 0, width, height);
   }
 
-  function drawMono() {
+  function drawSingle() {
     const { context, width, height } = getCanvasContext();
-    const color = document.getElementById("background-monochrome").value;
+    const color = document.getElementById("background-single").value;
     context.fillStyle = color;
     context.fillRect(0, 0, width, height);
   }
