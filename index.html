@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIMPLE PROFILE IMAGE GENERATOR</title>
+  <title>PROFILE IMAGE GENERATOR</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <link rel="apple-touch-icon" type="image/png" href="favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicons/icon-192x192.png">
 </head>
 <body>
 
   <div class="wrapper">
-
     
     <header class="header">
-      <h1 class="header__title">SIMPLE PROFILE IMAGE GENERATOR</h1>
+      <h1 class="header__title">PROFILE IMAGE GENERATOR</h1>
     </header>
 
     <div class="content-wrapper">
@@ -37,13 +38,13 @@
             
             <div class="forms__item" id="tab-monochrome">
               <span class="forms__title">MONOCHROME</span>
-              <input type="color" id="background-monochrome" value="#d83473" class="forms__input-type-color">
+              <input type="color" id="background-monochrome" value="#cdb3ff" class="forms__input-type-color">
             </div>
             
-            <div class="forms__item" id="tab-gradient">
+            <div class="forms__item is-active" id="tab-gradient">
               <span class="forms__title">GRADIENT</span>
-              <input type="color" id="background-gradient-start" value="#c82c55" class="forms__input-type-color">
-              <input type="color" id="background-gradient-end" value="#192f60" class="forms__input-type-color">
+              <input type="color" id="background-gradient-start" value="#e6afcf" class="forms__input-type-color">
+              <input type="color" id="background-gradient-end" value="#68a4d9" class="forms__input-type-color">
             </div>
           </form>
         </section>
@@ -55,11 +56,10 @@
     </div><!--content-wrapper-->
     
     <footer class="footer">
-      <small>&copy; SIMPLE PROFILE IMAGE GENERATOR</small>
+      <small>&copy; PROFILE IMAGE GENERATOR</small>
     </footer>
   </div><!--wrapper-->
     
-  
   <script src="js/main.js"></script>
 </body>
 </html>

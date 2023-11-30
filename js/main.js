@@ -2,7 +2,7 @@
 {
   // 初期描画
   getCanvasContext();
-  drawMono();
+  drawGradient();
   drawIcon();
 
   // イベントトリガー
@@ -36,7 +36,18 @@
   function setMode(mode) {
     getCanvasContext();
     mode === "monochrome" ? drawMono() : drawGradient();
+    mode === "monochrome" ? activeMonoTab() : activeGradientTab();
     drawIcon();
+  }
+
+  function activeMonoTab() {
+    document.getElementById("tab-gradient").classList.remove("is-active");
+    document.getElementById("tab-monochrome").classList.add("is-active");
+  }
+
+  function activeGradientTab() {
+    document.getElementById("tab-monochrome").classList.remove("is-active");
+    document.getElementById("tab-gradient").classList.add("is-active");
   }
 
   function getCanvasContext() {
