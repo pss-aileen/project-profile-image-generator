@@ -92,12 +92,12 @@ select {
 
 }
 
-#tab-monochrome,
+#tab-single,
 #tab-gradient {
   display: none;
 }
 
-#tab-monochrome.is-active {
+#tab-single.is-active {
   display: block;
 }
 
