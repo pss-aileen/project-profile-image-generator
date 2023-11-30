@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プロフィール画像ジェネレーター</title>
+  <title>SIMPLE PROFILE IMAGE GENERATOR</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
@@ -13,7 +13,7 @@
 
     
     <header class="header">
-      <h1 class="header__title">PROFILE GENERATOR</h1>
+      <h1 class="header__title">SIMPLE PROFILE IMAGE GENERATOR</h1>
     </header>
 
     <div class="content-wrapper">
@@ -22,50 +22,44 @@
           <canvas id="canvas-body" width="240" height="240" class="canvas__body">
           </canvas>
         </main>
-    
-        <section class="download">
-          <button id="btn" class="btn-download">ダウンロード</button>
-        </section>
       </div>
 
       <div class="content-wrapper__setting">
         <section class="forms-wrapper">
           <form class="forms">
             <label class="forms__item">
-              <span>カラーモード</span>
+              <span class="forms__title">COLOR MODE</span>
               <select id="color-type">
-                <option value="monochrome">単色</option>
-                <option value="gradient">グラデーション</option>
+                <option value="gradient">GRADIENT</option>
+                <option value="monochrome">MONOCHROME</option>
               </select>
             </label>
             
-            <div class="forms__color-wrapper">
-              <div class="forms__item">
-                <span>単色</span><br>
-                <input type="color" id="background-monochrome" value="#000000" class="forms__input-type-color">
-              </div>
-              
-              <div class="forms__item">
-                <span>グラデーション</span><br>
-                <input type="color" id="background-gradient-start" value="#87ceeb" class="forms__input-type-color">
-                <input type="color" id="background-gradient-end" value="#5f9ea0" class="forms__input-type-color">
-              </div>
+            <div class="forms__item" id="tab-monochrome">
+              <span class="forms__title">MONOCHROME</span>
+              <input type="color" id="background-monochrome" value="#d83473" class="forms__input-type-color">
+            </div>
+            
+            <div class="forms__item" id="tab-gradient">
+              <span class="forms__title">GRADIENT</span>
+              <input type="color" id="background-gradient-start" value="#c82c55" class="forms__input-type-color">
+              <input type="color" id="background-gradient-end" value="#192f60" class="forms__input-type-color">
             </div>
           </form>
+        </section>
+        <section class="download">
+          <button id="btn" class="btn-download">DOWNLOAD IMAGE</button>
         </section>
       </div>
       
     </div><!--content-wrapper-->
     
     <footer class="footer">
-      <small>&copy; profile generator</small>
+      <small>&copy; SIMPLE PROFILE IMAGE GENERATOR</small>
     </footer>
   </div><!--wrapper-->
     
-    
-  <script>
-    twemoji.parse(document.body);
-  </script>
+  
   <script src="js/main.js"></script>
 </body>
 </html>
