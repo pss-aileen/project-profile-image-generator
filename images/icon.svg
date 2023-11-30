@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <style>
+      .c {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle class="c" cx="451" cy="894" r="275"/>
+  <path class="c" d="m450.87,562.5c92.78,0,167.31-14.22,167.31-107s-27.5-242.5-168.5-242.5h.31c-141,0-168.5,149.72-168.5,242.5s75.9,107,168.69,107"/>
+</svg>
